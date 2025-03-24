@@ -11,7 +11,7 @@
 
 /*----------BANNER---------}*/
 .banner {
-    background: url() center / cover ;
+    background: url(../img/index/banner2.avif) center / cover ;
     height: 600px;
 }
 .banner__overlay {
