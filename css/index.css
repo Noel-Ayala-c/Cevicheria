@@ -2,12 +2,14 @@
 /*---------VARIABLES---------*/
 :root {
     --color-principal:#ffffff;
-    --color-secundario:#05469b;
+--color-secundario:#05469b;
     --color-tercero :#a4bcdb;
     --color-cuarto:#1399D5;
     --color-quinto:#133358 ;
     --color-sexto: #768692;
 }
+
+
 
 /*----------BANNER---------}*/
 .banner {
@@ -46,6 +48,9 @@ span {
     outline: 5px solid var(--color-secundario);    
     box-shadow: 0 0 30px 0 #fff;
 }
+
+
+
 
 /*------------LO MAS VENDIDO-------------*/
 .popular {
@@ -188,3 +193,274 @@ span {
     box-shadow: 0 0 20px 0 #000;
 }
 
+
+
+/*-------------OBJETIVOS------------*/ 
+.objetivo {
+    background-color: var(--color-tercero);
+    color: var(--color-quinto);
+    box-shadow: 0 0 10px 0 #222;
+    position: relative;
+}
+.objetivo article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+
+}
+.objetivo a  {
+    font-size: 2.5rem;
+    color: var(--color-quinto);
+    padding: 15px;
+    border: 2px solid var(--color-quinto);
+    border-radius: 50%;
+}
+.objetivo hr {
+    border: none;
+    height: 2px;
+    background-color: var(--color-quinto);
+}
+
+
+
+/*--------GALERIA------------*/
+.galeria__overlay {
+    background:url(../img/fondo-marino.png);
+}
+.galeria{
+    display: grid;
+    grid-template-columns: minmax(150px , 350px) ;
+    grid-template-rows: repeat(3, 1fr);
+    justify-content: center;
+    gap: 20px;
+    padding: 50px 30px;
+    background:#0004;
+    max-height: 750px;
+}
+.galeria__img {
+    overflow: hidden;
+    background-color: var(--color-cuarto);
+}
+.galeria__none {
+    display: none;
+}
+.galeria__img img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.2s;
+}
+.galeria__img img:hover {
+    transform: scale(1.2);
+    opacity: 0.7;
+}
+
+
+
+/*---------BLOGS---------*/
+.blog {
+    background-color: #e8eef6;
+    padding: 10px 20px 50px ;
+    box-shadow: 0 0 10px 0 #222;
+}
+.blog h3 {
+    font-size: 1.8rem;
+    text-align: center;
+    margin: 30px 0;
+    color: var(--color-quinto);
+}
+.blog__conte {
+    display: flex;
+    justify-content: center;
+}
+.blog__img{
+    max-width: 350px;
+    height: 225px;
+    overflow: hidden;
+}
+.blog__img img {
+    width: 100%;
+    min-height:225px;
+}
+.blog__none{
+    display: none;
+}
+.blog__conte article {
+    background-color: var(--color-principal);
+    padding: 20px;
+    box-shadow: 0 0 5px 0 var(--color-secundario);
+    transition: 0.3s;
+}
+.blog__conte article:hover {
+    box-shadow:  0 0 40px 0 var(--color-secundario);
+}
+.blog__conte article p, .blog__conte article h4 {
+    font-weight: 900;    
+    color: var(--color-cuarto);
+}
+.blog__text {
+    margin-top: 20px;
+}
+
+
+/*------CONTAINER H1 (400px)-----*/
+@container (min-width: 385px) {
+    .popular h1 {
+        font-size: 1.7rem;
+    }
+    .casilla__none:nth-child(2){
+        display: block;
+    }
+    .popular__casillas {
+        grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+    }
+}
+@container (min-width: 500px) {
+    .casilla__none:nth-child(3),.casilla__none:nth-child(4){
+        display: block;
+    }
+    .popular__casillas {
+        grid-template-columns: repeat(2,minmax(150px,270px));
+        gap:50px 35px;
+    }
+}
+@container (min-width: 800px) {
+    .casilla__none:nth-child(5),.casilla__none:nth-child(6){
+        display: block;
+    }
+    .popular__casillas {
+        grid-template-columns: repeat(3,minmax(150px,300px));
+        grid-template-rows: repeat(2,1fr);
+        gap: 50px;
+    }
+    :is(.trio__img, .causa__img, .tigre__img) {
+        height: 220px;
+    } 
+}
+@container (min-width: 950px) {
+    .popular h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/*-------MEDIA QUERY / ANCHOS, GALERIA, VISION Y MISION (700PX)*/
+@media screen and (min-width:700px) {
+    /*------SEPARACION------*/
+    .popular {
+        padding-top: 70px;
+    }
+
+
+    /*------MISION Y VISIOM-------*/
+    .objetivo {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .objetivo hr {
+        height: 145px;
+        width: 2px;
+    }
+    :is(.obje__vision, .obje__mision) {
+        max-width: 500px;
+    }
+
+
+    /*-------GALERIA-------*/
+    .galeria {
+        background-attachment: fixed;
+    }
+    .galeria__none {
+        display: block;
+    }
+    .galeria {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+    .galeria__img:nth-child(3) {
+        grid-column: 2/ span 2;
+        grid-row: 1/ span 2;
+    }
+}
+
+
+
+/*-----MEDIA QUERY / BANNER, TAMAÑO DE LETRA, BLOG (800PX) */
+@media screen and (min-width:800px) {
+
+    /*--------BANNER---------*/
+    .banner {
+        background-attachment: fixed;
+    }
+    .banner__conte {
+        align-items: start;
+        text-align: left;
+        max-width: 400px;
+        font-size: 1.3rem;
+    }
+    .banner__conte a {
+        margin-left: 4rem;
+    }
+
+
+
+    /*---------POPULAR---------*/
+    .popular a {
+        font-size: 1.5rem;
+    } 
+
+    
+    /*---------BLOG----------*/
+    .blog {
+        padding: 30px 20px 80px;
+    }
+    .blog__none {
+        display: block;
+    }
+    .blog article {
+        flex: 1;
+    }
+    .blog__text {
+        font-size: 0.8rem;
+    }
+    .blog__conte {
+        gap: 50px;
+        justify-content: space-between;
+    }
+}
+
+
+/*--------MEDIA QUERY / POPULAR (1030PX)*/
+@media screen and (min-width:1000px) {
+    .popular__casillas {
+        justify-content: space-between;
+    }
+    .popular article {
+        position: relative;
+        top: 0;
+        margin-top: 30px;
+        min-width: 270px;
+        flex: 1;
+        transition: 0.5s;
+    }
+    .popular article:hover {
+        top: -40px;
+        transform: scale(1);
+        box-shadow: 0 20px 50px 0 var(--color-secundario);
+    }
+    .popular {
+        padding-bottom: 50px;
+    }
+
+    .blog__text {
+        font-size: 1rem;
+    }
+}
+
+
+/*-----MEDIA QUERY / ANCHO DE LA GALERYA (1330PX)*/
+@media screen and (min-width:1330px) {
+    .galeria {
+        padding: 100px 30px;
+    }
+}
