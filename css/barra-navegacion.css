@@ -170,7 +170,7 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 20px;
+    padding: 10px;
 }
 footer h4 {
     text-decoration: underline;
@@ -184,28 +184,31 @@ footer a:hover {
     font-weight: 500;
 }
 footer ul {
-    width: 200px;
+    width: 180px;
     list-style: none;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 footer li {
-    line-height: 1.8;
-    font-size: 0.8rem;
+    line-height: 1.6;
+    font-size: 0.75rem;
     overflow-wrap: anywhere;
 }
 footer i {
-    margin-right: 10px;
-    font-size: 1rem;
+    margin-right: 8px;
+    font-size: 0.9rem;  
 }
 .footer__img {
-    
-    max-width: 270px;
+    max-width: 200px;
     margin: auto;
 }
 .footer__img img {
     max-width: 100%;
-    filter: drop-shadow(0 0 4px  var(--color-principal));
+    position: relative;
+    bottom: 180px;
+    filter: drop-shadow(0 0 4px var(--color-principal));
 }
+
+
 
 
 /*-------WHATSAAP FIXED---------*/
